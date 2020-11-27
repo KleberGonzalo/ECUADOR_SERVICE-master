@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proyecto_Movil.MisViajesPage"
+        >
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="" />
+            <Label Text="Ecuador - Tourism Service" TextColor="#333333" FontSize="15" FontAttributes="None" HorizontalOptions="Center" />
+            <Label Text="" />
+            <Label Text="MIS VIAJES" TextColor="Olive" FontSize="18"  WidthRequest="{OnPlatform UWP=300,Android=300,iOS=300}" FontAttributes="None" />
+            <Label Text=""/>
+
+            <ListView x:Name="ListaViajes">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout  Orientation="Horizontal">
+                                <Label Text="{Binding desde}"></Label>
+                                <Label Text="{Binding hasta}"></Label>
+                                <Label Text="{Binding fecha}"></Label>
+                                <Label Text="{Binding hora}"></Label>
+                                <Label Text="{Binding tipo}"></Label>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label Text="MIS HOTELES"
+                   TextColor="Olive"
+                   FontSize="18"
+                   WidthRequest="{OnPlatform UWP=300,Android=300,iOS=300}"
+                   FontAttributes="None" />
+            <Label Text="" />
+            <ListView x:Name="ListaHoteles" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal"   >
+                                <Label Text="{Binding codHotel}"></Label>
+                                  <Label Text="{Binding provincia}"></Label>
+                                <Label Text="{Binding hhotel}"></Label>
+                                <Label Text="{Binding fecha}"></Label>
+                                <Label Text="{Binding hora}"></Label>
+ 
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

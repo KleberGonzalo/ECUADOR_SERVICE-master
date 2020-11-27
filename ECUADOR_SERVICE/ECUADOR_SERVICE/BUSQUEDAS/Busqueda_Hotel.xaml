@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ECUADOR_SERVICE.Busqueda_Hotel"
+             Title="Ecuador - Tourism Service">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Start" HorizontalOptions="CenterAndExpand">
+            <Grid RowSpacing="25">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+            </Grid>
+            <StackLayout Grid.Row="1" HorizontalOptions="Center">
+                <Label Text=""/>
+                <Label Text="BÚSQUEDA DE HOTELES" TextColor="#008B8B" FontSize="18"  WidthRequest="{OnPlatform UWP=300,Android=300,iOS=300}" FontAttributes="Bold" />
+                <Label Text=""/>
+            </StackLayout>
+            
+            <!--BUsqueda-->
+
+            <StackLayout Grid.Row="2" HorizontalOptions="Center">
+
+
+                <Picker x:Name="Provincia"
+                        Title="Prvincias"
+                        FontSize="16"
+                        WidthRequest="{OnPlatform UWP=146,Android=123,iOS=146}"
+                        HorizontalOptions="Center">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Pichincha</x:String>
+                            <x:String>Guayaquil</x:String>
+                            <x:String>Cuenca</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <Picker x:Name="Hotel"
+                        Title="Hoteles Disponibles "
+                        FontSize="16"
+                        WidthRequest="{OnPlatform UWP=146,Android=123,iOS=146}"
+                        HorizontalOptions="Center">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Colon</x:String>
+                            <x:String>Guayaquilng</x:String>
+                            <x:String>Mayor </x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <DatePicker  x:Name="fechaReserva" />
+                <TimePicker  x:Name="horaReserva"></TimePicker>
+                <Button x:Name="GuadarH" Text="Guardar" Clicked="Guadar_Clicked"/>
+
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
